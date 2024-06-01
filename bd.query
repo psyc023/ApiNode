@@ -1,0 +1,19 @@
+CREATE TABLE persons (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    apellido_paterno VARCHAR(255) NOT NULL,
+    apellido_materno VARCHAR(255) NOT NULL,
+    estado VARCHAR(100) NOT NULL
+);
+
+INSERT INTO persons (nombre, apellido_paterno, apellido_materno, estado) VALUES
+    ('Juan', 'López', 'García', 'Activo'),
+    ('María', 'González', 'Martínez', 'Inactivo'),
+    ('Carlos', 'Hernández', 'Rodríguez', 'Activo'),
+    ('Ana', 'Pérez', 'Sánchez', 'Inactivo'),
+    ('Pedro', 'Díaz', 'López', 'Activo'),
+    ('Laura', 'Sánchez', 'Gómez', 'Inactivo'),
+    ('Luis', 'Martínez', 'Hernández', 'Activo'),
+    ('Sofía', 'Torres', 'Díaz', 'Inactivo'),
+    ('Alejandro', 'Flores', 'Muñoz', 'Activo'),
+    ('Diana', 'Ruiz', 'Jiménez', 'Inactivo');

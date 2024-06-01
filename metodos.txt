@@ -1,0 +1,17 @@
+GET - Obtener todas las personas:
+GET http://localhost:3000/api/persons
+
+GET - Obtener una persona por su ID:
+GET http://localhost:3000/api/persons/:id
+
+POST - Crear una nueva persona:
+POST http://localhost:3000/api/persons
+
+PUT - Actualizar una persona por su ID:
+PUT http://localhost:3000/api/persons/:id
+
+DELETE - Eliminar una persona por su ID:
+DELETE http://localhost:3000/api/persons/:id
+
+Documentación de la API (Swagger):
+http://localhost:3000/api-docs
