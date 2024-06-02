@@ -1,13 +1,11 @@
 import express from 'express';
+import cors from 'cors'; // Importa el paquete cors
 import personRoutes from './routes/personRoutes';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import sequelize from './config/database';
 
 const app = express();
-
-app.use(express.json());
-app.use('/api', personRoutes);
 
 // Configuración de Swagger
 const options = {
@@ -31,6 +29,12 @@ const specs = swaggerJsdoc(options);
 
 // Monta Swagger en tu aplicación Express
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+
+// Aplica el middleware de CORS después de configurar Swagger y antes de tus rutas
+app.use(cors());
+
+app.use(express.json());
+app.use('/api', personRoutes);
 
 const startServer = async () => {
   try {
