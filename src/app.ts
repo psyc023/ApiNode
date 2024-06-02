@@ -24,7 +24,7 @@ const options = {
       },
     ],
   },
-  apis: ['./routes/*.ts'], // Rutas de tu aplicación que quieres documentar
+  apis: ['./src/routes/*.ts'], // Asegúrate de que la ruta sea correcta
 };
 
 const specs = swaggerJsdoc(options);
@@ -36,6 +36,10 @@ const startServer = async () => {
   try {
     await sequelize.sync({ force: false });
     console.log('Base de datos sincronizada');
+    const port = process.env.PORT || 3001; // Cambia a 3001
+    app.listen(port, () => {
+      console.log(`Servidor corriendo en http://localhost:${port}`);
+    });
   } catch (error) {
     console.error('No se pudo sincronizar la base de datos:', error);
   }
